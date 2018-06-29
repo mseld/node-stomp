@@ -1,0 +1,23 @@
+{
+    "name": "node-stomp",
+    "version": "1.0.1",
+    "description": "STOMP Client for Node.js",
+    "main": "lib/stomp",
+    "directories": {
+        "lib": "lib"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mseld/node-stomp.git"
+    },
+    "keywords": ["STOMP", "messaging", "queue"],
+    "author": "mseld",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/mseld/node-stomp/issues"
+    },
+    "homepage": "https://github.com/mseld/node-stomp#readme"
+}
