@@ -1,4 +1,4 @@
-const stomp = require('stomp');
+const stomp = require('node-stomp');
 
 // Set debug to true for more verbose output.
 // login and passcode are optional (required by rabbitMQ)
