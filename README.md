@@ -20,10 +20,25 @@ let stomp_args = {
 // Specified number will 'fetch' that many messages
 // and dump it to the client.
 let headers = {
-    destination: '/queue/test_stomp',
-    ack: 'client',
+    destination: '/queue/test',
+    ack: 'client-individual',
     // 'activemq.prefetchSize': '10'
 };
+
+// Multi-Destinations
+{
+    destination: [
+        '/queue/test_1',
+        '/queue/test_2',
+    ],
+    ack: 'client-individual',
+}
+
+// Wildcards
+{
+    destination: '/queue/test.>'
+    ack: 'client-individual',
+}
 
 let messages = 0;
 let client = new stomp.Stomp(stomp_args);
@@ -54,6 +69,6 @@ client.on('error', function (error_frame) {
 
 ## TODO
 - [x] Support Multi-Destinations
-- [x] Support Wild-Card
+- [x] Support [Wildcards](http://activemq.apache.org/wildcards.html)
 - [ ] Support Re-Connecting 
 - [ ] Support Fail-Over
