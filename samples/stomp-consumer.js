@@ -14,7 +14,7 @@ let stomp_args = {
 // Specified number will 'fetch' that many messages
 // and dump it to the client.
 let headers = {
-    destination: '/queue/test_stomp',
+    destination: ['/queue/test_q1', '/queue/test_q2'],
     ack: 'client',
     // 'activemq.prefetchSize': '10'
 };

@@ -1,5 +1,5 @@
 # node-stomp
-STOMP Client for Node.js
+[STOMP](https://stomp.github.io/) Client for Node.js
 
 [![Build status](https://travis-ci.org/mseld/node-stomp.svg?branch=master)](https://travis-ci.org/mseld/node-stomp)
 
@@ -70,5 +70,8 @@ client.on('error', function (error_frame) {
 ## TODO
 - [x] Support Multi-Destinations
 - [x] Support [Wildcards](http://activemq.apache.org/wildcards.html)
-- [ ] Support Re-Connecting 
+- [ ] Support Re-Connecting
 - [ ] Support Fail-Over
+- [ ] Validate
+    - headers.ack ['auto','client','client-individual']
+    - headers.destination
