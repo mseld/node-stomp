@@ -73,5 +73,5 @@ client.on('error', function (error_frame) {
 - [ ] Support Re-Connecting
 - [ ] Support Fail-Over
 - [ ] Validate
-    - headers.ack ['auto','client','client-individual']
-    - headers.destination
+    - [ ] headers.ack ['auto','client','client-individual']
+    - [ ] headers.destination
