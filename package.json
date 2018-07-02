@@ -13,7 +13,11 @@
         "type": "git",
         "url": "git+https://github.com/mseld/node-stomp.git"
     },
-    "keywords": ["STOMP", "messaging", "queue"],
+    "keywords": [
+        "STOMP",
+        "messaging",
+        "queue"
+    ],
     "author": "mseld",
     "license": "ISC",
     "bugs": {
