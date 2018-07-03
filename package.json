@@ -26,5 +26,8 @@
     "homepage": "https://github.com/mseld/node-stomp#readme",
     "devDependencies": {
         "mocha": "^5.2.0"
+    },
+    "publishConfig": {
+        "access": "public"
     }
 }
