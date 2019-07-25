@@ -3,6 +3,8 @@
 
 [![Build status](https://travis-ci.org/mseld/node-stomp.svg?branch=master)](https://travis-ci.org/mseld/node-stomp)
 
+This library was originally developed by [Benjamin W. Smith](https://github.com/benjaminws).
+
 ```js
 const stomp = require('node-stomp');
 
@@ -75,3 +77,9 @@ client.on('error', function (error_frame) {
 - [ ] Validate
     - [ ] headers.ack ['auto','client','client-individual']
     - [ ] headers.destination
+
+
+## Authors
+
+ * [Benjamin W. Smith](https://github.com/benjaminws)
+ * [Mahmoud Samy](https://github.com/mseld)
