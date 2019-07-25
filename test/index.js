@@ -8,18 +8,18 @@ let stomp_args = {
     host: 'localhost',
     /* additional header */
     debug: false,
-    'client-id': 'my-client-id',
-    'accept-version': stomp.VERSIONS.V1_0,
+    // 'client-id': 'my-client-id',
+    // 'accept-version': stomp.VERSIONS.V1_0,
     // 'heart-beat': '5000,5000',
 };
 
 // 'activemq.prefetchSize' is optional.
 // case multi-dest/Wildcards recommended to set ack to : client-individual
 let headers = {
-    destination: '/queue/test',
-    // ack: 'client',
+    id: 1,
+    destination: ['/queue/test-4', '/queue/test-5'],
     ack: 'client-individual',
-    'activemq.prefetchSize': '50'
+    'activemq.prefetchSize': '10'
 };
 
 let messages = 0;
@@ -31,7 +31,9 @@ client.connect();
 
 client.on('connected', function() {
     console.log('[AMQ] Connected');
-    client.subscribe(headers);
+    client.subscribe(headers, function(params) {
+
+    });
 });
 
 client.on('disconnected', function(err) {
@@ -49,10 +51,10 @@ client.on('message', function(frame) {
 
     for (const key in frame.headers) {
         if (frame.headers.hasOwnProperty(key))
-            console.log(`${messages} - ${key} : ${frame.headers[key]}`);
+            console.log(`[${messages}] ${key} : [${frame.headers[key]}]`);
     }
 
-    console.log(`${messages} - body : ${message}`);
+    console.log(`[${messages}] body : ${message}`);
 
     client.send({
         destination: '/queue/received',
@@ -84,7 +86,7 @@ function disconnect() {
     });
 }
 
-setTimeout(disconnect, 3000);
+setTimeout(unsubscribe, 10000);
 
 // exist process on SIGINT
 process.on('SIGINT', function() {
