@@ -1,9 +1,9 @@
-const stomp = require('../lib/stomp');
+var stomp = require('../lib/stomp');
 
 // support version 1.1 and 1.2
 // Set debug to true for more verbose output.
 // login and passcode are optional (required by rabbitMQ)
-let stomp_args = {
+var stomp_args = {
     port: 61613,
     host: 'localhost',
     /* additional header */
@@ -15,16 +15,16 @@ let stomp_args = {
 
 // 'activemq.prefetchSize' is optional.
 // case multi-dest/Wildcards recommended to set ack to : client-individual
-let headers = {
+var headers = {
     id: 1,
     destination: ['/queue/test-4', '/queue/test-5'],
     ack: 'client-individual',
     'activemq.prefetchSize': '10'
 };
 
-let messages = 0;
+var messages = 0;
 
-let client = new stomp.Stomp(stomp_args);
+var client = new stomp.Stomp(stomp_args);
 
 // start connection with active-mq
 client.connect();
@@ -40,14 +40,14 @@ client.on('disconnected', function(err) {
     console.log('[AMQ] Disconnected');
 });
 
-let queue = [];
+var queue = [];
 
 client.on('message', function(frame) {
     messages++;
 
-    let message = frame.body[0];
-    let messageId = frame.headers['message-id'];
-    let subscription = frame.headers.subscription;
+    var message = frame.body[0];
+    var messageId = frame.headers['message-id'];
+    var subscription = frame.headers.subscription;
 
     for (const key in frame.headers) {
         if (frame.headers.hasOwnProperty(key))
