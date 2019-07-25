@@ -72,12 +72,11 @@ client.on('error', function (error_frame) {
 ## TODO
 - [x] Support Multi-Destinations
 - [x] Support [Wildcards](http://activemq.apache.org/wildcards.html)
-- [ ] Support Re-Connecting
+- [x] Support Composite Destinations
+- [x] Support version [1.1](https://stomp.github.io/stomp-specification-1.1.html)
+- [ ] Support version [1.2](https://stomp.github.io/stomp-specification-1.2.html)
+- [ ] Support Reconnecting
 - [ ] Support Fail-Over
-- [ ] Validate
-    - [ ] headers.ack ['auto','client','client-individual']
-    - [ ] headers.destination
-
 
 ## Authors
 
